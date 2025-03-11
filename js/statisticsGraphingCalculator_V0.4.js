@@ -200,8 +200,8 @@ function add_row()
     `    
     <div class= "row_button_container">
         <div id= "move_buttons">
-            <img class= "row_button" id="row_button_up" src="../img/arrow_up.png" onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" onmouseup="mouse_is_down = false" draggable="false"></img>
-            <img class= "row_button" id="row_button_down" src="../img/arrow_down.png" onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" onmouseup="mouse_is_down = false" draggable="false"></img>
+            <img class= "row_button" id="row_button_up" src="img/arrow_up.png" onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" onmouseup="mouse_is_down = false" draggable="false"></img>
+            <img class= "row_button" id="row_button_down" src="img/arrow_down.png" onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" onmouseup="mouse_is_down = false" draggable="false"></img>
         </div>
 
         <img class="row_button" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/minus.png" onclick="delete_row(this.parentNode.parentNode.parentNode)" draggable="false"></img>
