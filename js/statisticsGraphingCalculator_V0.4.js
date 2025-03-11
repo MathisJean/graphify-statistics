@@ -204,10 +204,10 @@ function add_row()
                  onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" 
                  onmouseup="mouse_is_down = false" draggable="false">
                  
-            <img class="row_button" id="row_button_down" src="/graphify-statistics/img/minus.png" onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" onmouseup="mouse_is_down = false" draggable="false">
+            <img class="row_button" id="row_button_down" src="/graphify-statistics/img/arrow_down.png" onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" onmouseup="mouse_is_down = false" draggable="false">
         </div>
     
-        <img class="row_button" src="/graphify-statistics/img/arrow_up.png" onclick="delete_row(this.parentNode.parentNode.parentNode)" draggable="false">
+        <img class="row_button" src="/graphify-statistics/img/minus.png" onclick="delete_row(this.parentNode.parentNode.parentNode)" draggable="false">
     </div>
     `;
 
