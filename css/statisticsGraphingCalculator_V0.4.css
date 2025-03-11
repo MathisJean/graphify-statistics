@@ -394,6 +394,7 @@ li.shortcut
     height: 5rem;
 
     justify-content: center;    
+    align-items: center;
 }
 
 #page_description
@@ -408,7 +409,8 @@ li.shortcut
 
     height: 5rem;
 
-    justify-content: center;   
+    justify-content: center;
+    align-items: center;
 }
 
 #get_started 
