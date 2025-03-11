@@ -204,7 +204,7 @@ function add_row()
             <img class= "row_button" id="row_button_down" src=`${window.location.origin}/main/img/arrow_down.png}` onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" onmouseup="mouse_is_down = false" draggable="false"></img>
         </div>
 
-        <img class="row_button" src=`${window.location.origin}/main/img/minus.png}` onclick="delete_row(this.parentNode.parentNode.parentNode)" draggable="false"></img>
+        <img class="row_button" src=`${img/minus.png}` onclick="delete_row(this.parentNode.parentNode.parentNode)" draggable="false"></img>
     </div>
     `;
 
