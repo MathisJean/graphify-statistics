@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Graphify - Statistics</title>
+    <link rel="stylesheet" href="../css/statisticsGraphingCalculator_V0.4.css">
+    <link rel="icon" href="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/bar_chart_blue.png">
+</head>
+
+<body>
+    <script src="../js/statisticsGraphingCalculator_V0.4.js" defer></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js?v=1"></script>
+
+    <div id="nav_bar">
+        <img id="nav_logo" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/bar_chart.png" draggable="false">   
+        
+        <ul id="nav_list">
+            <li class="nav_list_item">
+                <div class="nav_icon_wrap" onmousedown="get_started(document.getElementById('page_header'), event)">
+                    <img class="nav_icon" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/nav_home.png" draggable="false">
+                </div>                
+            </li>
+            <li class="nav_list_item">
+                <div class="nav_icon_wrap" onmousedown="get_started(rows[0], event)">
+                    <img class="nav_icon" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/nav_table.png" draggable="false">
+                </div>
+            </li>
+            <li class="nav_list_item">
+                <div class="nav_icon_wrap" onmousedown="get_started(document.getElementById('graph'), event)">
+                    <img class="nav_icon" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/nav_graph.png" draggable="false">
+                </div>
+            </li>
+            <li class="nav_list_item">
+                <div class="nav_icon_wrap" onmousedown="get_started(document.getElementById('pie'), event)">
+                    <img class="nav_icon" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/nav_pie.png" draggable="false">
+                </div>
+            </li>
+            <li class="nav_list_item">
+                <div class="nav_icon_wrap" onmousedown="get_started(document.getElementById('min_value'), event)">
+                    <img class="nav_icon" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/nav_statistics.png" draggable="false">
+                </div>
+            </li>
+            <li class="nav_list_item" id="nav_shortcut" >
+                <div class="nav_icon_wrap">
+                    <img class="nav_icon" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/nav_shortcut.png" draggable="false"> 
+                </div>
+            </li>
+
+            <div id="shortcut_popup_wrap">
+                <div id="shortcut_popup">
+                    <ul id="shortcut_list">
+                        <li class="shortcut">
+                            <div class="shortcut_key_wrap">
+                                <img id="tab_key" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/tab_icon.png" draggable="false">
+                            </div>     
+
+                            <div class="img_description">Tab</div>
+
+                            <div class="shortcut_description">New Row</div>
+                        </li>
+
+                        <li class="shortcut">
+                            <div class="shortcut_key_wrap">
+                                <img id="enter_key" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/enter_icon.png" draggable="false">
+                            </div>
+
+                            <div class="img_description">Enter</div>
+
+                            <div class="shortcut_description">Focus on Next Cell</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ul>
+
+        <div class="nav_list_item">
+            <div class="nav_icon_wrap" onmousedown="print()">
+                <img class="nav_icon" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/nav_export.png" draggable="false"> 
+            </div>
+        </div>
+    </div>
+
+    <div class="image_container">
+        <div id="image">
+            <img src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/statistics_background.jpeg">
+        </div>
+
+        <div id="image_border_bottom"></div>
+
+        <div id="get_started_wrap">
+            <header id="page_header">Graphify</header> 
+            <header id="page_description">Data Made Visual</header>
+            <button id="get_started" onclick="this.blur(); get_started(rows[0], event)">Get Started</button>
+        </div>
+    </div>
+
+    <div id="header1_div">
+        <div id="table_div">
+            <div id="table_header_wrap">
+                <h1 id="table_header">Table</h1>
+            </div>
+
+            <form onsubmit="calculate_descriptive_statistics(event)" submit="">
+                <div id="table_wrap">
+                    <table id="table" class="table">
+                        <thead id="header">
+                            <th>
+                                <div id="variable_header">
+                                    <input type="text" name="variable_cell" class="header" placeholder="Variable Name" required autocomplete="off">
+
+                                    <img id="variable_info" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/info.png">
+                                    <div id="variable_info_pop_up">For Continuous Variables: [a, b[</div>
+                                </div>
+                            </th>  
+                            <th>
+                                <input type="text" name="population_cell" class="header" placeholder="Target Population" required autocomplete="off">
+                            </th>
+                            <th>
+                                <input type="text" name="percentage_cell" class="header" value="Percentage(%)" readonly>
+                            </th>
+                            <th>
+                                <input type="text" name="cumulative_percentage_cell" class="header" value="Cumulative(%)" readonly>
+                            </th>
+                            <th>
+
+                            </th>
+                        </thead>
+
+                        <tbody></tbody>
+
+                        <tfoot>
+                            <th>
+                                <input type="text" name="total_cell" class="footer" value="Total" readonly>
+                            </th>
+                            <th>
+                                <input type="number" name="total_population_cell" class="footer" value= "0" readonly>
+                            </th>
+                            <th>
+                                <input type="number" name="total_percentage_cell" class="footer" value= "0.0" readonly>
+                            </th>
+                            <th>
+                                <input type="number" name="total_cumulative_percentage_cell" class="footer" readonly>
+                            </th>
+                            <th>
+
+                            </th>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <br>
+
+                <div id= "graphing_button_wrap">
+                    <input type="button" class="graphing_button" id="clear_button" onclick="clear_table()" value="Reset"></input> 
+                    <input type="submit" class="graphing_button" id="graph_button" value="Graph"></input>
+                </div>
+            </form>
+        </div>
+    </div>    
+
+    <div id="graph_wrap">
+        <header class="section_header">Graph</header>
+
+        <input type="text" id="graph_title" placeholder="Title"></input>            
+
+        <div id="graph"></div>
+    </div>    
+
+    <div id="pie_wrap">
+        <header class="section_header">Pie Chart</header>
+
+        <div id="pie"></div>
+    </div>
+
+    <div id="descriptive_stats">
+        <div id="stats_header_wrap">
+            <header id="stats_header">Statistics</header>
+
+            <img id="stat_info" src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/info_blue.png">
+
+            <div id="stat_pop_up">Order Variables Logically to Avoid Quartile Errors</div>
+        </div>
+
+        <div class="stat">
+            <p class="stat_header">Mode</p>
+
+            <p class="stat_value" id="mode_value">None</p>
+        </div>
+
+        <div class="stat">
+            <p class="stat_header">Minimum</p>
+
+            <p class="stat_value" id="min_value">None</p>
+        </div>
+
+        <div class="stat">
+            <p class="stat_header">Quartiles</p>
+
+            <p class="stat_value" id="quartiles_value">None</p>
+        </div>
+
+        <div class="stat">
+            <p class="stat_header">Maximum</p>
+
+            <p class="stat_value" id="max_value">None</p>
+        </div>
+
+        <div class="stat">
+            <p class="stat_header">Average</p>
+
+            <p class="stat_value" id="average_value">None</p>
+        </div>
+
+        <div class="stat">
+            <p class="stat_header">Deviation</p>
+
+            <p class="stat_value" id="deviation_value">None</p>
+        </div>
+    </div>
+    
+</body>
+</html>
