@@ -209,7 +209,7 @@ function add_row()
                  onmouseup="mouse_is_down = false" draggable="false">
         </div>
     
-        <img class="row_button" src="main/img/minus.png" 
+        <img class="row_button" src="img/minus.png" 
              onclick="delete_row(this.parentNode.parentNode.parentNode)" draggable="false">
     </div>
     `;
