@@ -200,7 +200,7 @@ function add_row()
     `
     <div class="row_button_container">
         <div id="move_buttons">
-            <img class="row_button" id="row_button_up" src="img/arrow_up.png" 
+            <img class="row_button" id="row_button_up" src="/graphify-statistics/img/arrow_up.png" 
                  onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" 
                  onmouseup="mouse_is_down = false" draggable="false">
                  
