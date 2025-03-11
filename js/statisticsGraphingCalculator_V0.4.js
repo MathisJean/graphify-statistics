@@ -200,16 +200,16 @@ function add_row()
     `
     <div class="row_button_container">
         <div id="move_buttons">
-            <img class="row_button" id="row_button_up" src="${window.location.origin}/graphify-statistics/img/arrow_up.png" 
+            <img class="row_button" id="row_button_up" src="$../img/arrow_up.png" 
                  onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" 
                  onmouseup="mouse_is_down = false" draggable="false">
                  
-            <img class="row_button" id="row_button_down" src="${window.location.origin}/graphify-statistics/img/arrow_down.png" 
+            <img class="row_button" id="row_button_down" src="../img/arrow_down.png" 
                  onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" 
                  onmouseup="mouse_is_down = false" draggable="false">
         </div>
     
-        <img class="row_button" src="graphify-statistics/img/minus.png" 
+        <img class="row_button" src="../img/minus.png" 
              onclick="delete_row(this.parentNode.parentNode.parentNode)" draggable="false">
     </div>
     `;
