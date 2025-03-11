@@ -197,16 +197,23 @@ function add_row()
 
     // Set Cell Parameters
     buttonCell.innerHTML = 
-    `    
-    <div class= "row_button_container">
-        <div id= "move_buttons">
-            <img class= "row_button" id="row_button_up" src=`${window.location.origin}/main/img/arrow_up.png}` onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" onmouseup="mouse_is_down = false" draggable="false"></img>
-            <img class= "row_button" id="row_button_down" src=`${window.location.origin}/main/img/arrow_down.png}` onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" onmouseup="mouse_is_down = false" draggable="false"></img>
+    `
+    <div class="row_button_container">
+        <div id="move_buttons">
+            <img class="row_button" id="row_button_up" src="${window.location.origin}/main/img/arrow_up.png" 
+                 onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" 
+                 onmouseup="mouse_is_down = false" draggable="false">
+                 
+            <img class="row_button" id="row_button_down" src="${window.location.origin}/main/img/arrow_down.png" 
+                 onmousedown="mouse_is_down = true; drag_row(this.parentNode.parentNode.parentNode.parentNode)" 
+                 onmouseup="mouse_is_down = false" draggable="false">
         </div>
-
-        <img class="row_button" src=`${img/minus.png}` onclick="delete_row(this.parentNode.parentNode.parentNode)" draggable="false"></img>
+    
+        <img class="row_button" src="img/minus.png" 
+             onclick="delete_row(this.parentNode.parentNode.parentNode)" draggable="false">
     </div>
     `;
+
 
     cell1.innerHTML = '<input type="text" name="variable_value_cell" class="cell" id="variable_cell" placeholder="Variable Value" required autocomplete="off" min=0>';
     cell2.innerHTML = '<input type="number" name="population_value_cell" class="cell" id="population_cell" placeholder="Population Value" required autocomplete="off" min=0>';
