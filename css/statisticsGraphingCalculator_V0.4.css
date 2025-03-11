@@ -1,7 +1,6 @@
-@font-face 
+*
 {
-    font-family: LeagueSpartan;
-    src: url("C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/font/LeagueSpartan-VariableFont_wght.ttf");
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media print
@@ -228,7 +227,6 @@ body
     border-radius: 20px;
 
     font-size: 15px;
-    font-family: LeagueSpartan;
 
     color: white;
     background-color: rgba(0, 0, 0, 0.85);
@@ -300,7 +298,6 @@ li.shortcut
 
     top: 100%;
 
-    font-family: LeagueSpartan;
     font-size: 80%;
     font-weight: bold;
 
@@ -387,7 +384,6 @@ li.shortcut
 
 #page_header
 {
-    font-family: LeagueSpartan;
     font-size: 7rem;
     font-weight: bold;
 
@@ -402,7 +398,6 @@ li.shortcut
 
 #page_description
 {
-    font-family: LeagueSpartan;
     font-size: 2rem;
     font-weight: bold;
 
@@ -421,7 +416,6 @@ li.shortcut
     background-color: blue;
     color: white;
 
-    font-family: LeagueSpartan;
     font-size: 1.5rem;
 
     border: none;
@@ -480,7 +474,6 @@ li.shortcut
 
 #table_header
 {
-    font-family: LeagueSpartan;
     font-size: 4.5rem;
     font-weight: bold;
 
@@ -551,7 +544,6 @@ li.shortcut
     border-radius: 20px;
 
     font-size: 15px;
-    font-family: LeagueSpartan;
 
     margin: 2px, 3px;
     padding-right: 20px;
@@ -582,7 +574,6 @@ li.shortcut
     cursor: pointer;
 
     font-size: 15px;
-    font-family: LeagueSpartan;
     font-weight: bold;
 
     margin: 2px, 3px;
@@ -619,7 +610,6 @@ li.shortcut
     cursor: pointer;
 
     font-size: medium;
-    font-family: LeagueSpartan;
 
     margin: 2px, 3px;
     padding-right: 40px;
@@ -655,7 +645,6 @@ li.shortcut
     cursor: pointer;
 
     font-size: medium;
-    font-family: LeagueSpartan;
     font-weight: bold;
 
     margin: 2px, 3px;
@@ -700,7 +689,6 @@ input[type=number]::-webkit-outer-spin-button
 {
     cursor: pointer;
 
-    font-family: LeagueSpartan;
     font-size: large;
     font-weight: bolder;
 
@@ -826,7 +814,6 @@ input[type=number]::-webkit-outer-spin-button
 {
     display: inline-block;
 
-    font-family: LeagueSpartan;
     font-size: 4.5rem;
     font-weight: bold;
 
@@ -853,8 +840,7 @@ input[type=number]::-webkit-outer-spin-button
     cursor: pointer;
 
     font-size: 200%;
-    font-family: LeagueSpartan;
-
+    
     color: var(--main-bg-color);
 
     width: 90%;
@@ -921,7 +907,6 @@ input[type=number]::-webkit-outer-spin-button
 {
     display: inline;
 
-    font-family: LeagueSpartan;
     font-size: 4.5rem;
     font-weight: bold;
 
@@ -976,7 +961,6 @@ input[type=number]::-webkit-outer-spin-button
 
     font-weight: bold;
     font-size: 15px;
-    font-family: LeagueSpartan;
 
     margin: 2px, 3px;
     padding-right: 20px;
@@ -1006,7 +990,6 @@ input[type=number]::-webkit-outer-spin-button
 {
     display: inline;
 
-    font-family: LeagueSpartan;
     font-size: 3rem;
     font-weight: bold;
 
@@ -1019,7 +1002,6 @@ input[type=number]::-webkit-outer-spin-button
 {
     display: inline;
 
-    font-family: LeagueSpartan;
     font-size: 2rem;
     font-weight: bold;
 
