@@ -1,0 +1,1031 @@
+@font-face 
+{
+    font-family: LeagueSpartan;
+    src: url("C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/font/LeagueSpartan-VariableFont_wght.ttf");
+}
+
+@media print
+{
+    @page 
+    {
+        margin: 0 !important;
+    }
+
+    #nav_bar, .image_container, #table_header_wrap, .graphing_button, .section_header, .row_button_container, .modebar-btn, #variable_info, #stats_header_wrap
+    {
+        display: none !important;
+    }
+
+    #graph, #pie
+    {
+        display: flex !important;    
+
+        height: 50vh !important;
+    }
+
+    #graph
+    {
+        margin-bottom: 30vh !important;
+    }
+
+    #graph_title
+    {
+        color: black;
+    }
+    
+    #header1_div
+    {
+        display: flex !important;
+        flex-direction: column !important;
+
+        margin-top: 5vh !important;
+    
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    #table_div
+    {
+        display: flex !important;
+        flex-direction: column !important;
+
+        justify-content: center !important;
+        align-items: center !important;
+
+        margin: auto !important;
+
+        height: auto !important;
+    }
+
+    .header
+    {
+        background-color: var(--off-white) !important;
+        color: black !important;
+
+        border-radius: 10px !important;
+    }
+    
+    .cell
+    {
+        background-color: var(--off-white) !important;
+        color: black !important;
+
+        border-radius: 10px !important;
+    }
+    
+    .footer
+    {
+        background-color: var(--off-white) !important;
+        color: black !important;
+
+        border-radius: 10px !important;
+    }
+
+    .stat_header
+    {
+        color: black !important;
+    }
+
+    .stat_value
+    {
+        color: black !important;
+    }
+}
+
+:root
+{
+    --main-bg-color: rgb(5, 40, 60);
+    --dark-teal: rgb(0, 128, 153);
+    --steel-blue: rgb(70, 130, 180);
+    --light-teal: rgb(100, 170, 190);
+    --grey: rgb(112, 128, 144);
+    --off-white: rgb(245, 245, 245);
+    --nav-bar-color: rgb(20, 60, 80);
+}
+
+.placeholder_highlight::placeholder 
+{
+    color: rgb(0, 128, 153);
+}
+
+.placeholder_highlight_remove::placeholder 
+{
+    color: white;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+#nav_bar 
+{
+    display: flex;
+    position: fixed;
+
+    background-color: var(--nav-bar-color);
+
+    height: 60px;
+    width: 100%;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    z-index: 5;
+}
+
+#nav_logo
+{
+    align-self: center;
+    height: 100%;
+
+    z-index: 6;
+
+    margin-right: 5%;
+}
+
+#nav_list 
+{
+    display: flex;
+
+    list-style-type: none;
+
+    margin: 0;
+    padding: 0;
+
+    align-items: center;
+    justify-content: left;
+
+    height: 100%;
+    width: 100%;
+}
+
+
+.nav_list_item 
+{
+    display: flex;
+
+    height: 100%;
+    width: 60px;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 6;
+}
+
+.nav_icon_wrap 
+{
+    display: flex;
+
+    height: 100%;
+    width: 60px;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 6;
+}
+
+.nav_icon 
+{
+    height: 50%;
+
+    z-index: 6;
+}
+
+.nav_list_item:hover 
+{
+    background-color: var(--main-bg-color);
+}
+
+.nav_list_item:active
+{
+    background-color: transparent;
+}
+
+#nav_shortcut:hover + #shortcut_popup_wrap
+{
+    display: grid;
+}
+
+#shortcut_popup_wrap
+{
+    display: none;
+
+    position: relative;
+
+    margin-left: 2%;
+}
+
+#shortcut_popup
+{
+    display: grid;
+    position: absolute;
+
+    border-style: none;
+    border-radius: 20px;
+
+    font-size: 15px;
+    font-family: LeagueSpartan;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    padding-bottom: 10px;
+
+    width: 240px;
+    height: 150px;
+
+    overflow: hidden;
+
+    z-index: 7;
+}
+
+ul#shortcut_list
+{
+    display: flex;
+
+    list-style-type: none;
+
+    padding: 0;
+    margin: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
+li.shortcut
+{
+    display: inline-block;
+
+    margin: 0 10px;
+
+    text-align: center;
+
+    width: 50%;
+    height: 100%;
+}
+
+.shortcut_key_wrap
+{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    height: 50%
+}
+
+#tab_key
+{
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+}
+
+#enter_key
+{
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+}
+
+.img_description
+{
+    display: absolute;
+
+    top: 100%;
+
+    font-family: LeagueSpartan;
+    font-size: 80%;
+    font-weight: bold;
+
+    padding-bottom: 20%;
+
+    justify-content: center; 
+}
+
+.shortcut_description
+{
+    display: flex;
+
+    justify-content: center;
+
+    width: 100%;
+    height: 30%;
+}
+
+.image_container 
+{
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+#image img 
+{
+    width: 100%;
+    height: 99.9%;
+
+    object-fit: cover;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 0;
+}
+
+#image_border_bottom
+{
+    background-color: white;    
+    clip-path: polygon(
+    0% 100%,
+    0.001% 95%,
+    3% 98%, 7% 96%, 12% 99%, 16% 94%,
+    21% 97%, 25% 97%, 30% 99%, 35% 96%,
+    39% 98%, 43% 93%, 48% 97%, 52% 94%,
+    57% 97%, 62% 95%, 66% 98%, 70% 96%,
+    74% 100%, 79% 94%, 83% 96%, 88% 99%,
+    92% 95%, 96% 98%, 98% 97%, 
+    99.999% 94%,
+    100% 100%
+    );
+
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+#get_started_wrap 
+{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#page_header
+{
+    font-family: LeagueSpartan;
+    font-size: 7rem;
+    font-weight: bold;
+
+    color: white;
+
+    padding: 0.75rem;
+
+    height: 5rem;
+
+    justify-content: center;    
+}
+
+#page_description
+{
+    font-family: LeagueSpartan;
+    font-size: 2rem;
+    font-weight: bold;
+
+    color: white;
+
+    padding: 0.75rem;
+    margin-top: 20px;
+
+    height: 5rem;
+
+    justify-content: center;   
+}
+
+#get_started 
+{
+    background-color: blue;
+    color: white;
+
+    font-family: LeagueSpartan;
+    font-size: 1.5rem;
+
+    border: none;
+    border-radius: 20px; 
+
+    height: 75px;
+    width: 160px;
+
+    margin-top: 20px;
+    margin-bottom: 10%;
+    padding: 10px 20px;
+
+    cursor: pointer;
+
+    z-index: 1;
+
+    outline: none;
+}
+
+
+
+/*****************************************************************************************************************************************************************************************************/
+
+
+
+#header1_div 
+{
+    display: flex;
+    flex-direction: column;
+
+    overflow: auto;
+    align-items: start; 
+    
+    margin-bottom: 10%;
+}
+
+#table_div 
+{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 5%;
+    width: 75%;
+}
+
+
+
+/*****************************************************************************************************************************************************************************************************/
+
+
+
+#table_header_wrap
+{
+    text-align: left;
+}
+
+#table_header
+{
+    font-family: LeagueSpartan;
+    font-size: 4.5rem;
+    font-weight: bold;
+
+    color: var(--main-bg-color);
+
+    padding: 0.75rem;
+
+    height: 5rem;
+
+    justify-content: center; 
+
+    margin-top: 15vh;
+    margin-bottom: 3vh;
+}
+
+#table_wrap
+{
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+}
+
+.table
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+#variable_header
+{
+    position: relative;
+}
+
+#variable_info
+{
+    position: absolute;
+
+    right: 5%;
+    top: 25%;
+
+    width: 20px;
+    height: 20px;
+
+    z-index: 1;
+}
+
+#variable_info:hover + #variable_info_pop_up
+{
+    display: grid;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    place-content: center;
+}
+
+#variable_info_pop_up
+{
+    display: none;
+    position: absolute;
+
+    top: -120%;
+    right: -50%;
+
+    border-style: none;
+    border-radius: 20px;
+
+    font-size: 15px;
+    font-family: LeagueSpartan;
+
+    margin: 2px, 3px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    place-content: center;
+    text-align: center;
+
+    width: 180px;
+    height: 60px;
+
+    overflow: hidden;
+
+    z-index: 7;
+}
+
+.header
+{
+    display: grid;
+
+    background-color: var(--main-bg-color);
+    color: white;
+
+    border-width: 2px;
+    border-style: none;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-family: LeagueSpartan;
+    font-weight: bold;
+
+    margin: 2px, 3px;
+    padding-right: 40px;
+    padding-left: 40px;
+
+    transition: background-color 0.5s, color, 0.5s;
+
+    place-content: center;
+    text-align: center;
+
+    width: 120px;
+    height: 42px;
+
+    overflow: hidden;
+}
+
+.header:hover
+{
+    opacity: 0.8;
+}
+
+.cell
+{
+    display: grid;
+    
+    background-color: var(--main-bg-color);
+    color: white;
+
+    border-width: 2px;
+    border-style: none;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-size: medium;
+    font-family: LeagueSpartan;
+
+    margin: 2px, 3px;
+    padding-right: 40px;
+    padding-left: 40px;
+
+    transition: background-color 0.5s, color, 0.5s;
+
+    place-content: center;
+    text-align: center;
+
+    width: 120px;
+    height: 40px;
+
+    overflow: hidden;
+}
+
+.cell:hover
+{
+    opacity: 0.8;
+}
+
+.footer
+{
+    display: grid;
+
+    background-color: var(--main-bg-color);
+    color: white;
+
+    border-width: 2px;
+    border-style: none;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-size: medium;
+    font-family: LeagueSpartan;
+    font-weight: bold;
+
+    margin: 2px, 3px;
+    padding-right: 40px;
+    padding-left: 40px;
+
+    transition: background-color 0.5s, color, 0.5s;
+
+    place-content: center;
+    text-align: center;
+
+    width: 120px;
+    height: 42px;
+
+    overflow: hidden;
+}
+
+.footer:hover
+{
+    opacity: 0.8;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button 
+{ 
+    -webkit-appearance: none; 
+}
+
+
+
+/*****************************************************************************************************************************************************************************************************/
+/* Graphing Buttons */
+
+
+#graphing_button_wrap
+{
+    text-align: left;
+    justify-content: center;          
+}
+
+.graphing_button
+{
+    cursor: pointer;
+
+    font-family: LeagueSpartan;
+    font-size: large;
+    font-weight: bolder;
+
+    border-style: none;
+    border-radius: 20px;
+
+    margin: 12px 10px;
+
+    text-align: center;
+    justify-content: center;
+
+    width: 80px;
+    height: 30px;
+
+    outline: none;
+}
+
+/********************************************/
+
+#clear_button
+{
+    background-color: rgb(255, 0, 0);
+    color: white;
+
+    cursor: pointer;
+
+    transition: background-color 0.15s;
+}
+
+#clear_button:hover
+{
+    background-color: rgb(255, 65, 65);
+}
+
+#clear_button:active
+{
+    background-color: rgb(255, 0, 0);
+}
+
+/********************************************/
+
+#graph_button
+{
+    background-color: rgb(0, 0, 255);
+    color: white;
+
+    cursor: pointer;
+
+    transition: background-color 0.25s, color, 0.25s;
+    transition: background-color 0.15s;
+}
+
+#graph_button:hover
+{
+    background-color: rgb(65, 65, 255);
+}
+
+#graph_button:active
+{
+    background-color: rgb(0, 0, 255);
+}
+
+
+
+
+/*****************************************************************************************************************************************************************************************************/
+
+
+
+.row_button_container 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;     
+    text-align: center;
+}
+
+#move_buttons 
+{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+
+    outline: none;
+}
+
+.row_button 
+{
+    cursor: pointer;
+
+    width: 20px;           
+    height: 20px;
+
+    outline: none;
+}
+
+.row_button:hover
+{
+    opacity: 0.7;
+}
+
+.blue-placeholder::placeholder 
+{
+    color: blue;
+    transition: color 0.5s ease;
+}
+
+.default-placeholder::placeholder 
+{
+    color: default;
+    transition: color 0.5s ease;
+}
+
+
+
+/*****************************************************************************************************************************************************************************************************/
+
+
+
+.section_header
+{
+    display: inline-block;
+
+    font-family: LeagueSpartan;
+    font-size: 4.5rem;
+    font-weight: bold;
+
+    color: var(--main-bg-color);
+
+    padding-left: 0.75rem;
+
+    height: 5rem;
+
+    justify-content: center; 
+
+    padding-top: 3vh;
+
+    margin-bottom: 0;
+    margin-left: 5%;
+
+    z-index: 0;
+}
+
+#graph_title
+{
+    border-style: none;
+
+    cursor: pointer;
+
+    font-size: 200%;
+    font-family: LeagueSpartan;
+
+    color: var(--main-bg-color);
+
+    width: 90%;
+    height: 40px;
+
+    text-align: center;
+
+    margin: auto;
+    padding: 0% 5%;
+
+    outline: none;
+
+    overflow: none;
+}
+
+#graph_wrap
+{
+    display: block;
+
+    position: relative;
+    width: 100%;
+
+    z-index: 0;
+}
+
+#graph
+{
+    width: 100%;
+    height: 100vh;
+
+    z-index: 1;
+}
+
+.modebar-btn[data-title="Compare data on hover"],
+.modebar-btn[data-title="Show closest data on hover"] 
+{
+    display: none;
+}
+
+#pie_wrap
+{
+    display: block;
+
+    position: relative;
+    width: 100%;
+
+    z-index: 0;
+}
+
+#pie
+{
+    width: 100%;
+    height: 100vh;
+
+    z-index: 1;
+}
+
+#stats_header_wrap
+{
+    position: relative;
+}
+
+#stats_header
+{
+    display: inline;
+
+    font-family: LeagueSpartan;
+    font-size: 4.5rem;
+    font-weight: bold;
+
+    color: var(--main-bg-color);
+
+    padding-left: 0.75rem;
+
+    height: 100%;
+
+    margin-bottom: 0;
+    margin-left: 5%;
+
+    z-index: 0;
+}
+
+#stat_info_wrap
+{
+    display: inline-flex;
+
+    align-items: flex-start;
+}
+
+#stat_info
+{
+    display: inline-flex;
+
+    height: 20px;
+    width: 20px;
+
+    margin-bottom: 15px;
+}
+
+#stat_info:hover + #stat_pop_up
+{
+    display: grid;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.85);
+
+    place-content: center;
+}
+
+#stat_pop_up
+{
+    display: none;
+    position: absolute;
+
+    top: -120%;
+    left: 18.5%;
+
+    border-style: none;
+    border-radius: 20px;
+
+    font-weight: bold;
+    font-size: 15px;
+    font-family: LeagueSpartan;
+
+    margin: 2px, 3px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    place-content: center;
+    text-align: center;
+
+    width: 180px;
+    height: 60px;
+
+    overflow: hidden;
+
+    z-index: 7;
+}
+
+.stat
+{
+    display: block;
+
+    margin-top: 1%;
+    margin-bottom: 2%;
+    margin-left: 7.5%;
+}
+
+.stat_header
+{
+    display: inline;
+
+    font-family: LeagueSpartan;
+    font-size: 3rem;
+    font-weight: bold;
+
+    color: var(--main-bg-color);
+
+    padding-left: 0.75rem;
+}
+
+.stat_value
+{
+    display: inline;
+
+    font-family: LeagueSpartan;
+    font-size: 2rem;
+    font-weight: bold;
+
+    color: var(--main-bg-color);
+
+    border-style: none;
+
+    padding-left: 0.75rem;
+}

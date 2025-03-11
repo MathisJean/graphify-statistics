@@ -1,0 +1,26 @@
+Website To do:
+
+/Pie Chart/
+/Histogramme/
+\Box Plot\
+
+/Quartiles for Continuous/
+/Max and Min/
+\Cote Z\
+/Écart-Type/
+/Descriptive Stats Display/
+
+/Print/
+
+/Graph Title/
+\Graph Buttons to icons\
+\Graph default axis set to 0,0\
+
+/Shortcut icons/
+
+/Comments / Clean up Code/
+Font Loading Error
+Variable Type Error
+Small Pie Chart Bug
+Bug testing
+User review

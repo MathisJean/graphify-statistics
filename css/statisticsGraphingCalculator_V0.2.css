@@ -1,0 +1,188 @@
+
+.table
+{
+    margin: auto;
+}
+
+.header
+{
+    background-color: rgb(245, 245, 245);
+    color: black;
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: rgb(128, 128, 128);
+
+    cursor: pointer;
+
+    font-size: large;
+    font-weight: bold;
+
+    margin-right: 8px;
+
+    transition: background-color 0.5s, color, 0.5s;
+
+    text-align: center;
+
+    width: 250px;
+    height: 40px;
+}
+
+.header:hover
+{
+    opacity: 0.7;
+}
+
+.cell
+{
+    background-color: rgb(255, 255, 255);
+    color: black;
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: rgb(128, 128, 128);
+
+    cursor: pointer;
+
+    font-size: medium;
+
+    margin-right: 8px;
+
+    transition: background-color 0.5s, color, 0.5s;
+
+    text-align: center;
+
+    width: 250px;
+    height: 20px;
+}
+
+.cell:hover
+{
+    opacity: 0.7;
+}
+
+.footer
+{
+    background-color: rgb(245, 245, 245);
+    color: black;
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: rgb(128, 128, 128);
+
+    cursor: pointer;
+
+    font-size: large;
+    font-weight: bold;
+
+    margin-right: 8px;
+
+    transition: background-color 0.5s, color, 0.5s;
+
+    text-align: center;
+
+    width: 250px;
+    height: 25px;
+}
+
+.footer:hover
+{
+    opacity: 0.7;
+}
+
+
+/*****************************************************************************************************************************************************************************************************/
+
+
+.add_row_button
+{
+    background-color: rgb(245, 245, 245);
+    color: rgb(128, 128, 128);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: rgb(128, 128, 128);
+
+    cursor: pointer;
+
+    font-size: large;
+    font-weight: bolder;
+
+    margin-right: 8px;
+
+    transition: background-color 0.5s, color, 0.5s;
+
+    text-align: center;
+
+    width: 30px;
+    height: 30px;
+}
+
+.add_row_button:hover
+{
+    opacity: 0.7;
+}
+
+.button_wrap
+{
+    text-align: center;
+}
+
+
+/*****************************************************************************************************************************************************************************************************/
+
+
+.row_button_container 
+{
+    display: flex;           /* Arrange children in a row */
+    align-items: center;     /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    height: 100%;     
+    text-align: center;
+}
+
+.move_buttons 
+{
+    display: grid;
+    align-items: center;    /* Center buttons vertically in grid */
+    justify-items: center;  /* Center buttons horizontally in grid */
+}
+
+.move_buttons button 
+{
+    display: flex;
+    align-items: center;    /* Center text vertically in button */
+    justify-content: center; /* Center text horizontally in button */
+    margin: 0;
+    text-align: center;
+}
+
+.row_button 
+{
+    background-color: rgba(245, 245, 245, 0.7);
+    color: rgb(128, 128, 128);
+    border-style: solid;
+    border-radius: 3px;
+    border-color: whitesmoke;
+
+    cursor: pointer;
+
+    font-size: large;      
+    font-weight: bold;
+
+    width: 15px;           
+    height: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row_button:hover
+{
+    opacity: 0.7;
+}

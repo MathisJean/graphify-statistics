@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Statistics Graphing Calculator</title>
+    <link rel="stylesheet" href="../css/statisticsGraphingCalculator_V0.3.css">
+</head>
+
+<body>
+    <script src="../js/statisticsGraphingCalculator_V0.3.js" defer></script>
+
+<div id="nav_bar">
+    <img src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/bar_chart.png">        
+</div>
+
+<div class="image_container">
+    <div id="image">
+        <img src="C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/img/statistics_background.jpeg">
+    </div>
+
+    <div id="image_border_bottom"></div>
+
+    <div id="get_started_wrap">
+        <header id="page_header">Statistics Calculator</header> 
+        <button id="get_started" onclick="get_started()">Get Started</button>
+    </div>
+</div>
+
+<div id="table_wrap">
+    <table id="table" class="table">
+        <thead id ="header">
+            <th>
+                <input type="text" name="variable_cell" class="header" placeholder="Variable Name" required autocomplete="off">
+            </th>  
+            <th>
+                <input type="text" name="population_cell" class="header" placeholder="Target Population" required autocomplete="off">
+            </th>
+            <th>
+                <input type="text" name="percentage_cell" class="header" value="Percentage(%)" readonly>
+            </th>
+            <th>
+                <input type="text" name="cumulative_percentage_cell" class="header" value="Cumulative Percentage(%)" readonly>
+            </th>
+            <th>
+
+            </th>
+        </thead>
+
+        <tbody></tbody>
+
+        <tfoot>
+            <th>
+                <input type="text" name="total_cell" class="footer" value="Total" readonly>
+            </th>
+            <th>
+                <input type="number" name="total_population_cell" class="footer" value= "0" readonly>
+            </th>
+            <th>
+                <input type="number" name="total_percentage_cell" class="footer" value= "0.0" readonly>
+            </th>
+            <th>
+                <input type="number" name="total_cumulative_percentage_cell" class="footer" readonly>
+            </th>
+            <th>
+
+            </th>
+        </tfoot>
+    </table>
+</div>
+
+<br>
+
+<div id= "graphing_button_wrap">
+    <button class="graphing_button" id="addrow_button" onclick="add_row()">+</button>
+    <button class="graphing_button" id="clear_button" onclick="clear_table()">Clear</button> 
+    <button class="graphing_button" id="graph_button" onclick="calculate_descriptive_statistics()">Graph</button>
+</div>
+
+</body>
+</html>

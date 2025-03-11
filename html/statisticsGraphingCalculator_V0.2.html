@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Statistics Graphing Calculator</title>
+    <link rel="stylesheet" href="../css/statisticsGraphingCalculator_V0.2.css">
+</head>
+
+<body>
+    <script src="../js/statisticsGraphingCalculator_V0.2.js" defer></script>
+
+<table id="table" class="table">
+    <thead>
+        <th>
+            <input type="text" name="variable_cell" class="header" placeholder="Variable Name" required autocomplete="off">
+        </th>  
+        <th>
+            <input type="text" name="population_cell" class="header" placeholder="Target Population" required autocomplete="off">
+        </th>
+        <th>
+            <input type="text" name="percentage_cell" class="header" value="Percentage(%)" readonly>
+        </th>
+        <th>
+            <input type="text" name="cumulative_percentage_cell" class="header" value="Cumulative Percentage(%)" readonly>
+        </th>
+        <th>
+
+        </th>
+    </thead>
+
+    <tbody></tbody>
+
+    <tfoot>
+        <th>
+            <input type="text" name="total_cell" class="footer" value="Total" readonly>
+        </th>
+        <th>
+            <input type="number" name="total_population_cell" class="footer" value= "0" readonly>
+        </th>
+        <th>
+            <input type="number" name="total_percentage_cell" class="footer" value= "0.0" readonly>
+        </th>
+        <th>
+            <input type="number" name="total_cumulative_percentage_cell" class="footer" readonly>
+        </th>
+        <th>
+
+        </th>
+    </tfoot>
+</table>
+
+<br>
+
+<div class= "button_wrap">
+    <button class= "add_row_button" onclick="add_row()">+</button>
+</div>
+
+</body>
+</html>

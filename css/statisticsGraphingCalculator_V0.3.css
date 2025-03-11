@@ -1,0 +1,431 @@
+@font-face 
+{
+    font-family: LeagueSpartan;
+    src: url("C:/Users/Mathis Jean/OneDrive/Personal/Learning/Programming/JavaScript Projects/Statistics Graphing Calculator/font/LeagueSpartan-VariableFont_wght.ttf");
+}
+
+:root
+{
+    --main-bg-color: rgb(5, 40, 60);
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+#nav_bar 
+{
+    background-color: white;
+
+    height: 60px;
+    width: 100%;
+
+    justify-content: center;
+}
+
+.image_container 
+{
+    position: relative;
+
+    width: 100%;
+    height: 100vh; /* Adjust as needed */
+
+    overflow: hidden;
+}
+
+#image img 
+{
+    width: 100%;
+    height: 99.9%;
+
+    object-fit: cover;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 0;
+}
+
+#image_border_bottom
+{
+    background-color: rgb(255, 255, 255);    
+    clip-path: polygon(
+    0% 100%,
+    0.001% 95%,
+    3% 98%, 7% 96%, 12% 99%, 16% 94%,
+    21% 97%, 25% 97%, 30% 99%, 35% 96%,
+    39% 98%, 43% 93%, 48% 97%, 52% 94%,
+    57% 97%, 62% 95%, 66% 98%, 70% 96%,
+    74% 100%, 79% 94%, 83% 96%, 88% 99%,
+    92% 95%, 96% 98%, 98% 97%, 
+    99.999% 94%,
+    100% 100%
+    );
+
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+#get_started_wrap 
+{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#page_header
+{
+    font-family: LeagueSpartan;
+    font-size: 6rem;
+    font-weight: bold;
+
+    color: white;
+
+    padding: 0.75rem;
+
+    height: 5rem;
+
+    justify-content: center;    
+}
+
+#get_started 
+{
+    background-color: blue;
+    color: white;
+
+    font-family: LeagueSpartan;
+    font-size: 1.5rem;
+
+    border: none;
+    border-radius: 20px; 
+
+    height: 75px;
+    width: 150px;
+
+    margin-top: 3%;
+    margin-bottom: 10%;
+    padding: 10px 20px;
+
+    cursor: pointer;
+
+    z-index: 1;
+}
+
+.table
+{
+    margin: auto;
+    margin-top: 25vh;
+
+    justify-content: center;
+}
+
+
+#table_wrap
+{
+    text-align: center;
+    justify-content: center;
+}
+
+.header
+{
+    background-color: var(--main-bg-color);
+    color: white;
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: rgb(127, 151, 218);
+
+    cursor: pointer;
+
+    font-size: medium;
+    font-family: LeagueSpartan;
+
+    margin: 2px, 3px;
+    padding: 2px;
+
+    transition: background-color 0.5s, color, 0.5s;
+
+    text-align: center;
+
+    width: 200px;
+    height: 30px;
+}
+
+.header:hover
+{
+    opacity: 0.7;
+}
+
+.cell
+{
+    background-color: var(--main-bg-color);
+    color: white;
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: rgb(127, 151, 218);
+
+    cursor: pointer;
+
+    font-size: medium;
+    font-family: LeagueSpartan;
+
+    margin: 2px, 3px;
+    padding: 2px;
+
+    transition: background-color 0.5s, color, 0.5s;
+
+    text-align: center;
+
+    width: 200px;
+    height: 30px;
+}
+
+.cell:hover
+{
+    opacity: 0.7;
+}
+
+.footer
+{
+    background-color: var(--main-bg-color);
+    color: white;
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: rgb(127, 151, 218);
+
+    cursor: pointer;
+
+    font-size: medium;
+    font-family: LeagueSpartan;
+
+    margin: 2px, 3px;
+    padding: 2px;
+
+    transition: background-color 0.5s, color, 0.5s;
+
+    text-align: center;
+
+    width: 200px;
+    height: 30px;
+}
+
+.footer:hover
+{
+    opacity: 0.7;
+}
+
+
+
+/*****************************************************************************************************************************************************************************************************/
+/* Graphing Buttons */
+
+
+#graphing_button_wrap
+{
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 25vh;
+}
+
+.graphing_button
+{
+    cursor: pointer;
+
+    font-family: LeagueSpartan;
+    font-size: large;
+    font-weight: bolder;
+
+    margin: 12px 10px;
+
+    text-align: center;
+    justify-content: center;
+
+    width: 80px;
+    height: 30px;
+}
+
+/********************************************/
+
+#addrow_button
+{
+    background-color: rgb(0, 220, 0);
+    color: rgb(255, 255, 255);
+
+    border-style: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    margin-right: 8px;
+
+    transition: background-color 0.15s;
+}
+
+#addrow_button:hover
+{
+    background-color: rgb(65, 220, 65);
+}
+
+#addrow_button:active
+{
+    background-color: rgb(0, 220, 0);
+}
+
+/********************************************/
+
+#clear_button
+{
+    background-color: rgb(255, 0, 0);
+    color: white;
+
+    border-style: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: background-color 0.15s;
+}
+
+#clear_button:hover
+{
+    background-color: rgb(255, 65, 65);
+}
+
+#clear_button:active
+{
+    background-color: rgb(255, 0, 0);
+}
+
+/********************************************/
+
+#graph_button
+{
+    background-color: rgb(0, 0, 255);
+    color: white;
+
+    border-style: none;
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: background-color 0.25s, color, 0.25s;
+    transition: background-color 0.15s;
+}
+
+#graph_button:hover
+{
+    background-color: rgb(65, 65, 255);
+}
+
+#graph_button:active
+{
+    background-color: rgb(0, 0, 255);
+}
+
+
+
+
+/*****************************************************************************************************************************************************************************************************/
+
+
+
+.row_button_container 
+{
+    display: flex;           /* Arrange children in a row */
+    align-items: center;     /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    height: 100%;     
+    text-align: center;
+}
+
+.move_buttons 
+{
+    display: grid;
+    align-items: center;    /* Center buttons vertically in grid */
+    justify-items: center;  /* Center buttons horizontally in grid */
+    justify-content: center;
+}
+
+.move_buttons button 
+{
+    display: flex;
+    align-items: center;    /* Center text vertically in button */
+    justify-content: center; /* Center text horizontally in button */
+    margin: 0;
+    text-align: center;
+}
+
+.row_button 
+{
+    background-color: rgba(245, 245, 245, 0.7);
+    color: rgb(128, 128, 128);
+    border-style: solid;
+    border-radius: 3px;
+    border-color: whitesmoke;
+
+    cursor: pointer;
+
+    font-size: large;      
+    font-weight: bold;
+
+    width: 15px;           
+    height: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    user-select: none;          /* Disable text selection */
+    -webkit-user-select: none;   /* For Safari */
+    -moz-user-select: none;      /* For Firefox */
+    -ms-user-select: none;       /* For older IE */
+}
+
+.row_button:hover
+{
+    opacity: 0.7;
+}
+
+#drag_row 
+{
+    opacity: 0.8;
+    font-size: 16px;
+    position: absolute;          /* Allows positioning anywhere on the screen */
+    border-style: none;
+    background-color: transparent; /* Ensure the background is visible if needed */
+    display: none;               /* Initially hidden until drag starts */
+    pointer-events: none;        /* Prevent interference with mouse events */
+    z-index: 1000;               /* Ensure it appears above other elements */
+}
+
+.drag_row_wrap 
+{
+    display: flex;               /* Use flexbox for alignment */
+    justify-content: center;     /* Center content horizontally */
+    align-items: top;         /* Center content vertically */
+}

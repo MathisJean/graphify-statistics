@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Statistics Graphing Calculator</title>
+</head>
+
+<body>
+    <script src="../js/statisticsGraphingCalculator.js" defer></script>
+
+<style>
+
+    .table
+    {
+        margin: auto;
+    }
+
+    .header
+    {
+        background-color: rgb(245, 245, 245);
+        color: black;
+
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 2px;
+        border-color: rgb(128, 128, 128);
+
+        cursor: pointer;
+
+        font-size: large;
+        font-weight: bold;
+
+        margin-right: 8px;
+
+        transition: background-color 0.5s, color, 0.5s;
+
+        text-align: center;
+
+        width: 250px;
+        height: 40px;
+    }
+
+    .cell
+    {
+        background-color: rgb(255, 255, 255);
+        color: black;
+
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 2px;
+        border-color: rgb(128, 128, 128);
+
+        cursor: pointer;
+
+        font-size: medium;
+
+        margin-right: 8px;
+
+        transition: background-color 0.5s, color, 0.5s;
+
+        text-align: center;
+
+        width: 250px;
+        height: 20px;
+    }
+
+    .footer
+    {
+        background-color: rgb(245, 245, 245);
+        color: black;
+
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 2px;
+        border-color: rgb(128, 128, 128);
+
+        cursor: pointer;
+
+        font-size: large;
+        font-weight: bold;
+
+        margin-right: 8px;
+
+        transition: background-color 0.5s, color, 0.5s;
+
+        text-align: center;
+
+        width: 250px;
+        height: 25px;
+    }
+
+    .add_row_button
+    {
+        background-color: rgb(245, 245, 245);
+        color: rgb(128, 128, 128);
+
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 30px;
+        border-color: rgb(128, 128, 128);
+
+        cursor: pointer;
+
+        font-size: large;
+        font-weight: bolder;
+
+        margin-right: 8px;
+
+        transition: background-color 0.5s, color, 0.5s;
+
+        text-align: center;
+
+        width: 30px;
+        height: 30px;
+    }
+
+    .button_wrap
+    {
+        text-align: center;
+    }
+
+</style>
+
+
+<table id="table" class="table">
+    <thead>
+        <th>
+
+        </th>
+
+        <th>
+            <input type="text" name="variable_cell" class="header" placeholder="Variable Name" required autocomplete="off">
+        </th>  
+        <th>
+            <input type="text" name="population_cell" class="header" placeholder="Target Population" required autocomplete="off">
+        </th>
+        <th>
+            <input type="text" name="percentage_cell" class="header" value="Percentage(%)" readonly>
+        </th>
+        <th>
+            <input type="text" name="cumulative_percentage_cell" class="header" value="Cumulative Percentage(%)" readonly>
+        </th>
+    </thead>
+
+    <tbody></tbody>
+
+    <tfoot>
+        <th>
+
+        </th>
+
+        <th>
+            <input type="text" name="total_cell" class="footer" value="Total" readonly>
+        </th>
+        <th>
+            <input type="number" name="total_population_cell" class="footer" value= "0" readonly>
+        </th>
+        <th>
+            <input type="number" name="total_percentage_cell" class="footer" value= "0.0" readonly>
+        </th>
+        <th>
+            <input type="number" name="total_cumulative_percentage_cell" class="footer" readonly>
+        </th>
+    </tfoot>
+</table>
+
+<br>
+
+<div class= "button_wrap">
+    <button class= "add_row_button" onclick="add_row()">+</button>
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>
