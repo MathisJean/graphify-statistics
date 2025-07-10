@@ -384,6 +384,8 @@ li.shortcut
 
 #page_header
 {
+    display: flex;
+  
     font-size: 7rem;
     font-weight: bold;
 
@@ -399,6 +401,8 @@ li.shortcut
 
 #page_description
 {
+    display: flex;
+  
     font-size: 2rem;
     font-weight: bold;
 
